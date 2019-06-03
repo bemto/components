@@ -4,8 +4,11 @@ import { bemto } from '@bemto/core';
 const button = {};
 
 button.apply = ({ children, ...props }) => {
-  const { getProps, elements } = bemto(props, {
-    __Root: {
+  const { getProps, elements } = bemto(props);
+  return {
+    RootTagName: props.href ? 'a' : 'button',
+    __Root: getProps('__Root', {
+      _disabled: !!props.disabled,
       type: !props.href ? (props.type || 'button') : undefined,
       tabIndex: props.disabled || props._disabled
         ? '-1'
@@ -17,13 +20,8 @@ button.apply = ({ children, ...props }) => {
         && !props.type
         && 'button'
         || undefined,
-    },
-    __Content: { tabIndex: -1 },
-  });
-  return {
-    RootTagName: props.href ? 'a' : 'button',
-    __Root: getProps('__Root', { _disabled: !!props.disabled }),
-    __Content: getProps('__Content'),
+    }),
+    __Content: getProps('__Content', { tabIndex: -1 }),
     __BLHelper: elements.__Before ? getProps('__BLHelper') : null,
     __Before: elements.__Before ? getProps('__Before') : null,
     __After: elements.__After ? getProps('__After') : null,

@@ -618,10 +618,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@bemto/core@^0.1.0-alpha.2":
-  version "0.1.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@bemto/core/-/core-0.1.0-alpha.2.tgz#a192e895fdd1924a192ef6dbd300befe76a49c48"
-  integrity sha512-5nEDlvCxjKEU3Z43vzo8hoXz5pq/hMRC18qmPwj70YX3srf36YNdBIuNGyZFm5P0vc8f5SkqBbQpZDmOXcBW5A==
+"@bemto/core@^0.1.0-alpha.6":
+  version "0.1.0-alpha.6"
+  resolved "https://registry.yarnpkg.com/@bemto/core/-/core-0.1.0-alpha.6.tgz#b921edb03cbf69fe300496af310dbd91b416895e"
+  integrity sha512-QXSqq+8bLk2xqsnP/lIBWWLfLntLZ7MFcNuwZ7bihHoHXEsrGVaCzDuXtPEiz7txIsc2DbyiNzdp0SK+uqzxnQ==
 
 "@bemto/dev-core-setup@^0.1.0":
   version "0.1.0"

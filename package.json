@@ -1,6 +1,6 @@
 {
   "name": "@bemto/components",
-  "version": "0.1.0-alpha.3",
+  "version": "0.1.0-alpha.4",
   "description": "Abstract framework-agnostic bemto components",
   "author": "Roman Komarov <kizu@kizu.ru>",
   "license": "MIT",
@@ -28,10 +28,10 @@
   "dependencies": {
   },
   "peerDependencies": {
-    "@bemto/core": "^0.1.0-alpha.3"
+    "@bemto/core": "^0.1.0-alpha.6"
   },
   "devDependencies": {
-    "@bemto/core": "^0.1.0-alpha.3",
+    "@bemto/core": "^0.1.0-alpha.6",
     "@bemto/dev-core-setup": "^0.1.0"
   },
   "jest": {
