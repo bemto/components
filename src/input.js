@@ -14,36 +14,34 @@ input.apply = ({
   onBlur,
   ...props
 }) => {
-  const { getProps, elements } = bemto(props, {
-    __View: { 'aria-hidden': true },
-    __Placeholder: { 'aria-hidden': true },
-    __Controller: {
-      type: type !== 'textarea' && (type || 'text') || undefined,
-      disabled,
-      value: value,
-      defaultValue: defaultValue,
-      onChange,
-      onFocus,
-      onBlur,
-    },
-  });
+  const { getProps, elements } = bemto(props);
   return {
     RootTagName: 'span',
     ControllerTagName: type === 'textarea' ? 'textarea' : 'input',
     __Root: getProps('__Root', { _disabled: !!disabled }),
     __OuterBefore: elements.__OuterBefore ? getProps('__OuterBefore') : null,
     __Layout: getProps('__Layout'),
-    __View: getProps('__View'),
+    __View: getProps('__View', { 'aria-hidden': true }),
     __Before: elements.__Before ? getProps('__Before') : null,
     __ControllerWrap: getProps('__ControllerWrap'),
     __Placeholder: elements.__Placeholder ? getProps('__Placeholder', {
+      'aria-hidden': true,
       _inactive: !props._empty || (props.__PlaceholderHint && !props._focus),
     }) : null,
     __PlaceholderHint:
       elements.__PlaceholderHint ? getProps('__PlaceholderHint', {
         _inactive: !props._empty || props._focus,
       }) : null,
-    __Controller: getProps('__Controller', { children }),
+    __Controller: getProps('__Controller', {
+      type: type !== 'textarea' && (type || 'text') || undefined,
+      disabled,
+      value,
+      defaultValue,
+      onChange,
+      onFocus,
+      onBlur,
+      children,
+    }),
     __After: elements.__After ? getProps('__After') : null,
     __OuterAfter: elements.__OuterAfter ? getProps('__OuterAfter') : null,
   };

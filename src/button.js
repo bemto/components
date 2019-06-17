@@ -12,7 +12,7 @@ button.apply = ({ children, ...props }) => {
       type: !props.href ? (props.type || 'button') : undefined,
       tabIndex: props.disabled || props._disabled
         ? '-1'
-        : (props.href || !props.type) && '0',
+        : ((props.href || !props.type) && '0' || undefined),
       role:
         !props.disabled
         && !props._disabled
